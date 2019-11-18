@@ -1,9 +1,21 @@
-import React, { Component } from 'react'
-import HelloWorld from './components/HelloWorld'
+import React, { Component } from "react"
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
+import Homepage from "./components/homepage"
+import Radiohead from "./components/radiohead"
+import PinkFloyd from "./components/pinkFloyd"
 
 class App extends Component {
   render() {
-    return <HelloWorld />
+    return (
+      <Router>
+        <header>some bands</header>
+        <Switch>
+          <Route exact path='/' component={Homepage}></Route>
+          <Route exact path='/Radiohead' component={Radiohead}></Route>
+          <Route exact path='/PinkFloyd' component={PinkFloyd}></Route>
+        </Switch>
+      </Router>
+    )
   }
 }
 
